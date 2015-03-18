@@ -1,0 +1,5 @@
+{
+  "name": "Map Widget",
+  "description": "Google map widget",
+  "scripts": ["widget.js"]
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
+  <input-template name="com.atex.plugins.map.Configuration" label="com.atex.plugins.map.Configuration">
+    <policy>com.atex.plugins.map.MapConfigPolicy</policy>
+    <editor>com.polopoly.plugin.OPluginConfigContextPolicyWidget</editor>
+    <viewer>com.polopoly.plugin.OPluginConfigContextPolicyWidget</viewer>
+
+    <type>AppConfig</type>
+
+    <param name="EditState_saveAndInsert">false</param>
+    <param name="EditState_saveAndView">true</param>
+    <param name="EditState_saveAndClose">true</param>
+    <param name="ViewState_insert">false</param>
+
+    <field name="gmapkey" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.gmapkey">
+    </field>
+    <field name="gmapregion" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.gmapregion">
+    </field>
+    <field name="gmaplanguage" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.gmaplanguage">
+    </field>
+    <field name="longitude" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.longitude">
+    </field>
+    <field name="latitude" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.latitude">
+    </field>
+    <field name="zoom" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.zoom">
+    </field>
+    <field name="mapheight" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.mapheight">
+    </field>
+    <field name="mapclass" input-template="p.TextInput"
+           label="com.atex.plugins.map.Configuration.mapclass">
+    </field>
+  </input-template>
+</template-definition>

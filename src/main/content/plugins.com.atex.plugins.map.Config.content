@@ -1,0 +1,6 @@
+id:.
+major:appconfig
+inputtemplate:com.atex.plugins.map.Configuration
+securityparent:p.siteengine.Configuration.d
+component:polopoly.Content:name:Map Configuration
+component:mapheight:value:300px

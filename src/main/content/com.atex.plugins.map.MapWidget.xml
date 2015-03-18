@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
+  <!--This file contains input template definitions -->
+  <input-template name="com.atex.plugins.map.MapWidget" label="com.atex.plugins.map.Map">
+    <policy>com.polopoly.cm.policy.ContentPolicy</policy>
+    <editor>com.atex.plugins.map.widget.OMapWidget</editor>
+    <viewer>com.atex.plugins.map.widget.OMapWidget</viewer>
+  </input-template>
+</template-definition>

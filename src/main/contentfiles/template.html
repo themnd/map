@@ -1,0 +1,9 @@
+<input class="mapWidget-location" type="text" ng-model="locationModel" placeholder="insert location..." size="40"/>
+<button ng-click="changeLocation()">Change Location</button>
+<input type="hidden" x-ng-model="data.point.longitude" />
+<input type="hidden" x-ng-model="data.point.latitude" />
+<input type="hidden" x-ng-model="data.point.zoom" />
+
+<button class="mapWidget-addPoint" ng-click="addPoint()">Add Point</button>
+<button class="mapWidget-delPoint" ng-click="delPoint()">Del Point</button>
+<div class="mapWidget-google-map"/>

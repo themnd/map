@@ -1,0 +1,10 @@
+#if ($mapJSON)
+#set($mapId = "map-" + $m.local.controllerContext.renderId + "-" + $content.contentId.contentId.contentIdString.replaceAll('\.', '-'))
+<div id="${mapId}" style="display:none;" class="$!config.mapClass"></div>
+<script type="text/javascript">
+$(document).ready(function() {
+  var m = new Atex.plugin.map();
+  m.initialize('${mapId}', ${mapJSON}, ${configJSON});
+});
+</script>
+#end

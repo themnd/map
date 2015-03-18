@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<batch xmlns="http://www.polopoly.com/polopoly/cm/xmlio">
+  <content>
+    <metadata>
+      <contentid>
+        <major>AppConfig</major>
+        <externalid>atex.onecms.Widget-mapWidget</externalid>
+      </contentid>
+
+      <security-parent>
+        <externalid>atex.onecms.OneCMSSettings</externalid>
+      </security-parent>
+
+      <input-template>
+        <externalid>atex.onecms.Widget.it</externalid>
+      </input-template>
+    </metadata>
+
+    <component group="polopoly.Content" name="name">OneCMS Widget - mapWidget</component>
+
+    <file name="manifest.json" encoding="relative">manifest.json</file>
+    <file name="widget.js" encoding="relative">widget.js</file>
+    <file name="template.html" encoding="relative">template.html</file>
+  </content>
+</batch>
