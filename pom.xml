@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.polopoly</groupId>
     <artifactId>public</artifactId>
-    <version>10.12.0</version>
+    <version>10.16.1</version>
     <relativePath />
   </parent>
 
@@ -31,6 +31,7 @@
 
   <properties>
     <polopoly.version>${project.parent.version}</polopoly.version>
+    <baseline.version>4.0.2</baseline.version>
   </properties>
 
   <pluginRepositories>
@@ -75,13 +76,13 @@
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>baseline</artifactId>
-      <version>4.0.1</version>
+      <version>${baseline.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.atex.plugins</groupId>
       <artifactId>baseline</artifactId>
-      <version>4.0.2</version>
+      <version>${baseline.version}</version>
       <classifier>contentdata</classifier>
     </dependency>
 

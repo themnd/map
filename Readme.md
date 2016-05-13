@@ -16,13 +16,13 @@ How to integrate into your project
 		<dependency>
 	      <groupId>com.atex.plugins</groupId>
 	      <artifactId>map</artifactId>
-	      <version>1.1</version>
+	      <version>1.2</version>
 	    </dependency>
 	    ...
 	    <dependency>
 	      <groupId>com.atex.plugins</groupId>
 	      <artifactId>map</artifactId>
-	      <version>1.1</version>
+	      <version>1.2</version>
 	      <classifier>contentdata</classifier>
 	    </dependency>
 	    ...
@@ -55,7 +55,65 @@ How to integrate into your project
 
       </layout>
     ```
-7. You can use it in act too:
+
+7. To use it in ACT, you have to modify the policy (for example ArticlePolicy):
+
+    ```
+    @Override
+    public ContentResult<ArticleBean> legacyToNew(final PolicyModelDomain modelDomain) throws CMException {
+      ...
+      return new ContentResult<>(
+                      null,
+                      ArticleBean.class.getName(),
+                      new Aspect<>(ArticleBean.class.getName(), bean),
+                      null,
+                      null,
+                      Arrays.<Aspect>asList(
+                              new Aspect<>("atex.Metadata", getMetadataInfo()),
+                              new Aspect<>(MapAspectBean.ASPECT_NAME, getMap())
+                      ));
+    }
+    ```
+
+    ```
+    @Override
+    public void newToLegacy(final ContentWrite<ArticleBean> dataWrite) throws CMException {
+        ...
+        MapAspectBean mapBean = dataWrite.getAspect(MapAspectBean.ASPECT_NAME,
+                MapAspectBean.class);
+        if (mapBean != null) {
+            setMap(mapBean);
+        }
+    }
+    ```
+
+    ```
+    public MapAspectBean getMap() {
+        try {
+            return MapAspectBeanUtil.getMapAspectBean(this);
+        } catch (CMException e) {
+            logger.log(Level.SEVERE, "cannot get map: " + e.getMessage(), e);
+        }
+        return null;
+    }
+
+    public void setMap(final MapAspectBean bean)
+            throws CMException {
+        MapAspectBeanUtil.setMapAspectBean(this, bean);
+    }
+    ```
+
+    and you should add the dependency to source-common/pom.xml:
+
+    ```
+    <dependency>
+      <groupId>com.atex.plugins</groupId>
+      <artifactId>map</artifactId>
+      <version>1.1</version>
+    </dependency>
+    ```
+
+8. You can use it in act too:
 
 	```
 	  "aspects": {
@@ -66,6 +124,7 @@ How to integrate into your project
 	  "dataBindings": [
 	    {
 	      "label": "Map",
+	      "name": "map",
 	      "widget": "mapWidget",
 
 	      "config": {
